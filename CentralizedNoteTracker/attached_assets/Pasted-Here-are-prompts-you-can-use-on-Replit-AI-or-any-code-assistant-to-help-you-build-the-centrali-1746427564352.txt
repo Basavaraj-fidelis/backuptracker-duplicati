@@ -1,0 +1,42 @@
+Here are prompts you can use on **Replit AI** or any code assistant to help you build the **centralized backup monitoring dashboard** for your Duplicati setup:
+
+---
+
+### 🧠 **Prompts for Backend (Node.js + Express + Database)**
+
+1. **Set up a Node.js Express server with endpoints to receive Duplicati backup status reports in JSON format.**
+2. **Create a POST endpoint `/api/backup/report` that accepts JSON from Duplicati agents.**
+3. **Store incoming backup reports in a MongoDB (or SQLite) database with fields like device ID, status, time, and backup size.**
+4. **Create GET endpoints to fetch backup status for all devices and for a specific device.**
+5. **Add logic to flag a backup as failed if it hasn't been received in 24 hours.**
+6. **Add an endpoint to retrieve the latest backup report per device sorted by time.**
+
+---
+
+### 🎨 **Prompts for Frontend (React or plain HTML)**
+
+1. **Build a dashboard UI to display a table of all devices with backup status, last backup time, and result (Success/Fail).**
+2. **Show colored indicators (green/yellow/red) based on backup freshness (e.g., <24h = green, 24–48h = yellow, >48h = red).**
+3. **Add a filter by date range or backup status.**
+4. **Build a device detail page that shows historical backups, backup sizes, and trends over time.**
+5. **Add login authentication for IT admins.**
+
+---
+
+### 🔐 **Security and Admin Prompts**
+
+1. **Add JWT-based authentication for admin login.**
+2. **Encrypt the incoming backup reports using a shared key.**
+3. **Add role-based access control for IT admins and viewers.**
+
+---
+
+### 🔁 **Agent Integration Prompts (For Endpoints Running Duplicati)**
+
+1. **Write a post-backup Duplicati script that sends a JSON report to a remote dashboard API.**
+2. **Use curl or PowerShell to send data to `http://<dashboard-ip>:<port>/api/backup/report`.**
+3. **Include fields like: hostname, status (success/fail), time, backup size, job name, errors.**
+
+---
+
+Would you like a complete starter project with both backend and frontend scaffolding?
